@@ -1,10 +1,5 @@
 ﻿mergeInto(LibraryManager.library, {
   
-  showSaveURL: function (str) {
-    $("#dialog").html("<p>"+Pointer_stringify(str)+"</p>");
-    $("#dialog").dialog("open");
-  },
-  
   initialize: function () {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
