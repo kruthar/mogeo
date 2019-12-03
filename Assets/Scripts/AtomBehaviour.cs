@@ -21,20 +21,13 @@ public class AtomBehaviour : MonoBehaviour
 
     public void initializeAtom(string atype, int acharge)
     {
-        Debug.Log("initing " + atype);
         id = ++idcounter;
         atomType = atype;
         charge = acharge;
         molecule = GameObject.Find("Molecule").GetComponent<MoleculeBehaviour>();
-        Debug.Log("molecule: " + molecule);
-        Debug.Log("setting color");
         setAtomColor();
-        Debug.Log("setting text");
         gameObject.GetComponentInChildren<TextMeshPro>().SetText(atype);
-        Debug.Log("setting charge");
         setAtomChargeText();
-        Debug.Log("done init");
-
     }
 
     // Based on this Atom's type, set is material color
@@ -214,7 +207,6 @@ public class AtomBehaviour : MonoBehaviour
 
     private void setAtomChargeText()
     {
-        Debug.Log("setting charge");
         string chargeText = "";
 
         if (charge == 1)
@@ -233,13 +225,9 @@ public class AtomBehaviour : MonoBehaviour
         {
             chargeText = "<sup>" + charge + "<sup>";
         }
-        Debug.Log("found charge");
+
         gameObject.GetComponentInChildren<TextMeshPro>().SetText(atomType + chargeText);
-        Debug.Log("done changing charge");
-        Debug.Log("fetching molecule: " + GameObject.Find("Molecule").GetComponent<MoleculeBehaviour>());
-        Debug.Log("none: " + MoleculeBehaviour.Mode.None);
         GameObject.Find("Molecule").GetComponent<MoleculeBehaviour>().setMode(MoleculeBehaviour.Mode.None);
-        Debug.Log("done setting mode");
     }
 
     public Atom getAtom()
@@ -250,11 +238,8 @@ public class AtomBehaviour : MonoBehaviour
     public static AtomBehaviour instantiateAtom(Vector3 location, string type)
     {
         MoleculeBehaviour molecule = GameObject.Find("Molecule").GetComponent<MoleculeBehaviour>();
-        Debug.Log("molecule: " + molecule);
         GameObject newAtom = Instantiate((GameObject)Resources.Load("Prefabs/Atom", typeof(GameObject)), location, Quaternion.identity, molecule.transform);
-        Debug.Log("atom: " + newAtom);
         AtomBehaviour atomScript = newAtom.GetComponent<AtomBehaviour>();
-        Debug.Log("atomscript: " + atomScript);
         atomScript.initializeAtom(type);
         return atomScript;
     }

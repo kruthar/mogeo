@@ -34,14 +34,9 @@ public class MoleculeBehaviour : MonoBehaviour {
         Adjust
     }
 
-    public void Start()
-    {
-        instructions = GameObject.Find("Instructions");
-        //recreateMolecule("1|-1.83|1.51|0.00|H|0,2|1.70|1.78|0.00|N|1,3|-0.63|-1.54|0.00|Na|-1,6|-2.69|2.03|0.00|z|0,_2|3|1,2|1|2,1|3|3,1|6|4,_Andy%20Kruth");
-    }
-
     public void setMode(Mode mod)
     {
+        GameObject instructions = GameObject.Find("Instructions");
         mode = mod;
 
         switch (mod)
@@ -96,6 +91,7 @@ public class MoleculeBehaviour : MonoBehaviour {
     public void setPhase(Phase phas)
     {
         phase = phas;
+        GameObject instructions = GameObject.Find("Instructions");
 
         switch (phas)
         {

@@ -48,7 +48,6 @@ public class Molecule
 
         for (int i = 0; i < encodedAtoms.Length; i++)
         {
-            Debug.Log("des " + i + encodedAtoms[i]);
             atoms[i] = Atom.deserialize(encodedAtoms[i]);
         }
 
