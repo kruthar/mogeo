@@ -250,8 +250,11 @@ public class AtomBehaviour : MonoBehaviour
     public static AtomBehaviour instantiateAtom(Vector3 location, string type)
     {
         MoleculeBehaviour molecule = GameObject.Find("Molecule").GetComponent<MoleculeBehaviour>();
+        Debug.Log("molecule: " + molecule);
         GameObject newAtom = Instantiate((GameObject)Resources.Load("Prefabs/Atom", typeof(GameObject)), location, Quaternion.identity, molecule.transform);
+        Debug.Log("atom: " + newAtom);
         AtomBehaviour atomScript = newAtom.GetComponent<AtomBehaviour>();
+        Debug.Log("atomscript: " + atomScript);
         atomScript.initializeAtom(type);
         return atomScript;
     }

@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class BondButton : MonoBehaviour
 {
-    public GameObject molecule;
-
     public void setBondMode(MoleculeBehaviour.Mode mode)
     {
-        MoleculeBehaviour moleculeScript = molecule.GetComponent<MoleculeBehaviour>();
+        MoleculeBehaviour moleculeScript = GameObject.Find("Molecule").GetComponent<MoleculeBehaviour>().GetComponent<MoleculeBehaviour>();
         moleculeScript.setMode(mode);
         gameObject.GetComponent<Image>().color = Color.red;
     }

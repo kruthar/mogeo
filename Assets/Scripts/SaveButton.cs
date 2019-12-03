@@ -4,10 +4,8 @@ using UnityEngine;
 using System.Runtime.InteropServices;
 using System.Web;
 
-public class BrowserScript : MonoBehaviour
+public class SaveButton : MonoBehaviour
 {
-    public MoleculeBehaviour molecule;
-
     [DllImport("__Internal")]
     private static extern void initialize();
 
@@ -15,9 +13,9 @@ public class BrowserScript : MonoBehaviour
     private static extern void showSaveURL(string str);
 
     // Start is called before the first frame update
-    public void click()
+    public void save()
     {
-        string saveURL = "https://kruthar.github.io/mogeo/index.html?save=" + molecule.serializeMolecule();
+        string saveURL = "https://kruthar.github.io/mogeo/index.html?save=" + GameObject.Find("Molecule").GetComponent<MoleculeBehaviour>().serializeMolecule();
         showSaveURL(saveURL);
     }
 

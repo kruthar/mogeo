@@ -43,12 +43,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1448745293861288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62bb16ac9227640e0bb0f84b0b0c309d, type: 3}
+  m_Script: {fileID: 11500000, guid: 40597e022fe5f4f5ca93d41fb7142479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   followMouse: 0
   bondType: 4
-  molecule: {fileID: 0}
 --- !u!54 &237520932304951073
 Rigidbody:
   m_ObjectHideFlags: 0
