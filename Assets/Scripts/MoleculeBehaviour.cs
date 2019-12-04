@@ -111,6 +111,7 @@ public class MoleculeBehaviour : MonoBehaviour {
 
     public void centerMolecule()
     {
+        transform.position = Vector3.zero;
         transform.rotation = Quaternion.identity; 
     }
 
@@ -150,6 +151,7 @@ public class MoleculeBehaviour : MonoBehaviour {
 
     public string serializeMolecule()
     {
+        centerMolecule();
         return getMolecule().serialize();
     }
 

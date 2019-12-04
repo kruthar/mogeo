@@ -44,9 +44,12 @@ public class BondButton : MonoBehaviour
 
     public static void resetBondButtons()
     {
-        foreach (Image image in GameObject.Find("Canvas/BondToggles").GetComponentsInChildren<Image>())
+        if (GameObject.Find("Canvas/BondToggles") != null)
         {
-            image.color = Color.white;
+            foreach (Image image in GameObject.Find("Canvas/BondToggles").GetComponentsInChildren<Image>())
+            {
+                image.color = Color.white;
+            }
         }
     }
 }
