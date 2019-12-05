@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using System.Web;
 
@@ -181,7 +182,7 @@ public class MoleculeBehaviour : MonoBehaviour {
     {
         if (encodedSave != null)
         {
-            Molecule molecule = Molecule.deserialize(encodedSave);
+            Molecule molecule = Molecule.deserialize(UnityWebRequest.UnEscapeURL(encodedSave));
             Hashtable newAtoms = new Hashtable();
 
             foreach (Atom atom in molecule.a)
